@@ -1,3 +1,120 @@
-// Place all the styles related to the registrations controller here.
-// They will automatically be included in application.css.
-// You can use Sass here: http://sass-lang.com/
+html
+  width: 100%
+  height: 100%
+
+body
+  width: 100%
+  height: 100%
+  margin: 0
+  font-size: 14px
+  font-family: arial, sans-serif
+  color: #333
+  background-color: #f1f1f1
+
+h1, h2, h3, h4, h5
+  margin: 0
+
+a
+  text-decoration: none
+  color: #5973a9
+  &:hover
+    color: #35476f
+  img
+    border-style: none
+
+ul
+  margin: 0
+  padding: 0
+  list-style: none
+
+table
+  border-collapse: collapse
+  width: 100%
+  border: 1px solid #ccc
+
+th, td
+  border: 1px solid #ccc
+
+/*---------------
+ *      utility
+ *----------------*/
+
+.table
+  display: table
+
+.table-cell
+  display: table-cell
+  vertical-align: middle
+
+.clear
+  clear: both
+
+.margin-right-10per
+  margin-right: 10%
+
+.margin-left-10per
+  margin-left: 10%
+
+/*---------------
+ *    background
+ *----------------*/
+
+.registrations
+  
+  &.new
+    #wrapper
+      min-height: 100%
+      width: 100%
+      height: 1000px
+      position: relative
+      background-image: url("/assets/door.jpg")
+      background-size: cover
+      background-position: center
+    img
+      height: 110%
+      width: 110%
+      background: center 0 no-repeat
+      background-size: 120% auto
+      position: relative
+
+    /*---------------
+     *  register-form
+     *----------------*/
+
+    .register
+      width: 680px
+      margin: 0 auto
+      margin-top: 40px
+
+    .register-form
+      position: relative
+      width: 640px
+      padding: 20px
+      background-color: rgba(112, 128, 144, 0.8)
+      margin-bottom: 0 auto
+
+    .register .register-form h4
+      font-size: 20px
+      margin: 0px 0px 20px 0px
+      font-weight: normal
+      color: rgba(220, 200, 200, 0.8)
+
+    .register .register-form .field
+      padding: 5px
+      margin: 15px 0px
+
+    .register .register-form .btn
+      margin: 50px 0px 0px 230px
+      padding: 5px 10px
+
+
+    /*------------------------
+     *        footer
+     *-------------------------*/
+
+    .footer .footer-text-end p
+      position: absolute
+      bottom: 10px
+      left: 50%
+      margin-left: -136px
+      color: #fff
