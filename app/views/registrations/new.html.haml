@@ -1,5 +1,8 @@
-%h1 Registrations#new
-%p Find me in app/views/registrations/new.html.haml
+- if logged_in?
+  %h1 ログインしているよ
+  = current_user.name
+- else
+  %h1 ログインしていないよ
 
 - @user.errors.each do |attr, message|
   .alert.alert-danger= message
@@ -13,9 +16,14 @@
   = f.text_field :major
   = f.label :career
   = f.text_field :career
+  = f.label :email
+  = f.text_field :email
   = f.label :password
   = f.password_field :password
   = f.label :password_confirmation
   = f.password_field :password_confirmation
   = f.submit
+- if logged_in?
+  = link_to "ログアウトする", sessions_path, method: :delete
+- else
   = link_to "ログインする", new_sessions_path
