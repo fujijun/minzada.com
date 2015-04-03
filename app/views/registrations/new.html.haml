@@ -1,16 +1,16 @@
-- if logged_in?
-  %h1 ログインしているよ
-  = current_user.name
-- else
-  %h1 ログインしていないよ
-
-- @user.errors.each do |attr, message|
-  .alert.alert-danger= message
-
-= form_for @user, url: registrations_path, method: :post do |f|
+.new  
   #wrapper
-    %img
-      .register
+    .register
+      - if logged_in?
+        %h1 ログインしているよ
+        = current_user.name
+      - else
+        %h1 ログインしていないよ
+
+      - @user.errors.each do |attr, message|
+        .alert.alert-danger= message
+
+      = form_for @user, url: registrations_path, method: :post do |f|
         .register-form
           %h4 アカウントを登録して新しい出会いを！!
           .field
@@ -43,22 +43,8 @@
             = f.text_field :password_confirmation, class: "form-control", placeholder: "パスワードをもう一度入力してください"
           .actions
             = f.submit '登録しよう！', class: "btn btn-primary"
-        = f.label :name
-        = f.text_field :name
-        = f.label :university
-        = f.text_field :university
-        = f.label :major
-        = f.text_field :major
-        = f.label :career
-        = f.text_field :career
-        = f.label :email
-        = f.text_field :email
-        = f.label :password
-        = f.password_field :password
-        = f.label :password_confirmation
-        = f.password_field :password_confirmation
-        = f.submit
-      - if logged_in?
-        = link_to "ログアウトする", sessions_path, method: :delete
-      - else
-        = link_to "ログインする", new_sessions_path
+           
+          - if logged_in?
+            = link_to "ログアウトする", sessions_path, method: :delete
+          - else
+            = link_to "ログインする", new_sessions_path

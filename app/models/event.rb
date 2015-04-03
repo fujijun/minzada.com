@@ -1,5 +1,5 @@
 class Event < ActiveRecord::Base
-  has_many :user
+  belongs_to :user
   has_many :comment
   has_many :attender
 end

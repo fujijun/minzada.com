@@ -1,15 +1,16 @@
 Rails.application.routes.draw do
   
 
-  resources :comments
-
-  resources :attenders
-
-  resources :events
-
   resource :registrations, only: [:new, :create]
   resource :sessions, only: [:new, :create, :destroy]
-  resource :users, only: [:index, :show]
+  resource :users, only: [:index, :show] do
+      resources :events
+      resources :comments
+  end
+
+  resources :events, only: [] do
+    resources :attenders
+  end
 
   root to: 'registrations#new'
 

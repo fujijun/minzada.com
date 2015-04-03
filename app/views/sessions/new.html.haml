@@ -1,13 +1,91 @@
-%h1 Sessions#new
-%p Find me in app/views/sessions/new.html.haml
-
-- if action_name == "create"
-  .alert.alert-danger
-    メールアドレスまたはパスワードが正しくありません。
-
-= form_for @user, url: sessions_path, method: :post do |f|
-  = f.label :email
-  = f.text_field :email
-  = f.label :password
-  = f.password_field :password
-  = f.submit
+/ ----------header-start----------
+%nav.navbar.navbar-inverse.navbar-fixed-top
+  .container-fluid
+    / Brand and toggle get grouped for better mobile display
+    .navbar-header
+      %button.navbar-toggle.collapsed{"data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", :type => "button"}
+        %span.sr-only Toggle navigation
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+      %a.navbar-brand{:href => "#"}
+        %img{:alt => "", :height => "20px", :src => "img/star-icon.png", :width => "20px"} Brand
+    / Collect the nav links, forms, and other content for toggling
+    #bs-example-navbar-collapse-1.collapse.navbar-collapse
+      %ul.nav.navbar-nav
+        %li.active
+          %a{:href => "meetings-index.html"}
+            Home
+            %span.sr-only (current)
+        %li
+          %a{:href => ""}
+        %li.dropdown
+      %form.navbar-form.navbar-left{:role => "search"}
+        .form-group
+          %input.form-control{:placeholder => "座談会を探そう！！", :type => "text"}
+        %button.btn.btn-default{:type => "submit"} Search
+      %ul.nav.navbar-nav.navbar-right
+        %li
+          %a{:href => "create.html"}
+            座談会を企画する
+            %span.caret
+        %li
+          %a{:href => "login.html"}
+            ログイン
+            %span.caret
+    / /.navbar-collapse
+  / /.container-fluid
+/ ----------header-end----------
+/ login-form start
+.container.login-content
+  .row
+    .login-head
+      %h2 ログイン
+      .admin-btn        
+        = link_to new_registrations_path do
+          %button.btn.btn-warning{:type => "submit"} 新規会員登録はこちら
+      .clear
+    .login.col-xs-6
+      #form.login-form
+        %h4.login-form-text メールアドレスを利用してログインする
+        %br
+          .login-text
+            %p
+              ※はじめての方はまず
+              = link_to new_registrations_path do
+                %strong 会員登録（無料）
+              をお願いします。会員登録にかかる時間は約１分です。
+          - if action_name == "create"
+            .alert.alert-danger
+              メールアドレスまたはパスワードが正しくありません。
+          = form_for @user, url: sessions_path, method: :post do |f|
+            .form-group
+              = f.label :email,"メールアドレス：hello@minzada.jp", class: "control-label"
+              = f.text_field :email, class: "form-control", placeholder: "Email", style: "background-color: #fffacd;"
+            .form-group
+              = f.label :password, "パスワード：6文字以上", class: "control-label"
+              = f.password_field :password, class: "form-control", placeholder: "password", style: "background-color: #fffacd;"          
+            .login-check
+              .checkbox
+                %label
+                  %input{:type => "checkbox"}
+                    次回も自動ログインする
+            %button.btn.btn-default{:type => "submit"} 
+              ログイン
+    / -------SNS-login　--------
+    .sns-login.col-xs-6
+      %form.sns-login-form
+        .login-form-head
+          %h4.sns-login-form-text.inline-block> SNSでログイン
+          .sub-text.inline-block
+            ※許可なくSNSに投稿されることはありません
+        .sns-btn-relation
+          %button.btn.btn-primary{:type => "submit"} Facebookを利用してログインする
+          .login-check
+            .checkbox
+              %label
+                %input{:type => "checkbox"}
+                  次回も自動ログインする
+/ login-form end
+.footer-text-end
+  %p.text-center Copyright © 2015 みんなの座談会, ALL Rights Reserved.
