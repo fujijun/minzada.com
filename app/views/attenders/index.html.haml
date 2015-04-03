@@ -1,0 +1,23 @@
+%h1 Listing attenders
+
+%table
+  %thead
+    %tr
+      %th User
+      %th Event
+      %th
+      %th
+      %th
+
+  %tbody
+    - @attenders.each do |attender|
+      %tr
+        %td= attender.user_id
+        %td= attender.event_id
+        %td= link_to 'Show', attender
+        %td= link_to 'Edit', edit_attender_path(attender)
+        %td= link_to 'Destroy', attender, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Attender', new_attender_path

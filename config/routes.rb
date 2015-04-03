@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   
 
+  resources :attenders
+
   resources :events
 
   resource :registrations, only: [:new, :create]
