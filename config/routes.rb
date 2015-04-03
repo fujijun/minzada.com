@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   
 
+  resources :events
+
   resource :registrations, only: [:new, :create]
   resource :sessions, only: [:new, :create, :destroy]
   resource :users, only: [:index, :show]
