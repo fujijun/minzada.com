@@ -5,21 +5,28 @@
       %ul
         - @event.errors.full_messages.each do |msg|
           %li= msg
+  .create-form
+    %h4 座談会を企画しましょう！
+    %p 座談会を企画してみましょう！<br>あなただけのオリジナルの座談会を作成してみましょう！
+    .field
+      = f.label :title
+      = f.text_field :title, class: "form-control", placeholder: "タイトル"
+    .field
+      .field-content
+        = f.label :content
+        = f.text_area :content, class: "form-control", placeholder: "座談会の内容や要望を記入してみましょう！"
+    .field
+      = f.label :date
+      = f.datetime_select :date
+    .field
+      = f.label :place
+      = f.text_field :place, class: "form-control", placeholder: "開催場所"
+    .field
+      = f.label :user_id
+      = f.number_field :user_id, class: "form-control", placeholder: ""
+    .actions
+      = f.submit '作成する！', class: "btn btn-warning"
 
-  .field
-    = f.label :title
-    = f.text_field :title, class: "form-control", placeholder: "タイトルを入力してください"
-  .field
-    = f.label :content
-    = f.text_area :content, class: "form-control", placeholder: "名前"
-  .field
-    = f.label :date
-    = f.datetime_select :date
-  .field
-    = f.label :place
-    = f.text_field :place, class: "form-control", placeholder: "場所を入力してください"
-  .field
-    = f.label :user_id
-    = f.number_field :user_id
-  .actions
-    = f.submit 'Save'
+
+  .footer-text-end
+    %p.text-center Copyright © 2015 みんなの座談会, ALL Rights Reserved.

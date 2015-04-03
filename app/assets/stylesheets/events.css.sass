@@ -1,3 +1,379 @@
-// Place all the styles related to the events controller here.
-// They will automatically be included in application.css.
-// You can use Sass here: http://sass-lang.com/
+html
+  width: 100%
+  height: 100%
+
+body
+  width: 100%
+  height: 100%
+  margin: 0
+  font-size: 14px
+  font-family: arial, sans-serif
+  color: #333
+  background-color: #f1f1f1
+
+h1, h2, h3, h4, h5
+  margin: 0
+
+a
+  text-decoration: none
+  color: #5973a9
+  &:hover
+    color: #35476f
+  img
+    border-style: none
+
+ul
+  margin: 0
+  padding: 0
+  list-style: none
+
+table
+  border-collapse: collapse
+  width: 100%
+  border: 1px solid #ccc
+
+th, td
+  border: 1px solid #ccc
+
+/*---------------
+ *      utility
+ *----------------*/
+
+.table
+  display: table
+
+.table-cell
+  display: table-cell
+  vertical-align: middle
+
+.clear
+  clear: both
+
+.margin-right-10per
+  margin-right: 10%
+
+.margin-left-10per
+  margin-left: 10%
+
+/*---------------
+ *    background
+ *----------------*/
+
+.events
+  
+  &.new
+  
+    background-image: url("/assets/evening-567840_1280.jpg")
+    background-position: center
+    background-size: cover
+    img
+      height: 110%
+      width: 110%
+      background: center 0 no-repeat
+      background-size: 120% auto
+      position: relative
+
+    /*---------------
+     *  register-form
+     *----------------*/
+
+    .create
+      width: 680px
+      position: absolute
+      top: 100px
+      left: 27%
+      margin: 40px auto 0px auto
+
+    .create-form
+      position: relative
+      width: 640px
+      padding: 20px
+      background-color: rgba(112, 128, 144, 0.8)
+      margin: 0 auto
+
+    .create .create-form h4
+      font-size: 20px
+      margin: 0px 0px 20px 0px
+      font-weight: normal
+      color: rgba(220, 200, 200, 0.8)
+
+    .create .create-form p
+      font-size: 13px
+      padding: 15px
+      text-align: center
+
+    .create .create-form .field
+      margin: 20px 0px
+
+    .create .create-form .field .field-content
+      height: 150px
+
+    .create .create-form .btn
+      margin: 50px 0px 0px 240px
+      padding: 5px 10px
+
+
+    /*------------------------
+     *        footer
+     *-------------------------*/
+
+    .footer .footer-text-end p
+      position: absolute
+      bottom: 10px
+      left: 50%
+      margin-left: -136px
+      color: #fff
+
+
+  &.index
+    .top-head
+      height: 400px
+      width: 100%
+      background: url(/assets/topimage2.jpg)
+      background-repeat: no-repeat
+      background-position: center
+      background-size: cover
+      padding-top: 100px
+      margin: 0 auto
+      position: relative
+      h1
+        color: #808080
+        font-size: 30px
+        text-align: center
+        text-shadow: 1px 2px 2px rgba(100, 225, 123, 0.2)
+        margin: 30px 0px 80px 0px
+      .common .btn
+        width: 100%
+        margin-top: 55px
+
+
+    .second-bar
+      height: 70px
+      width: 100%
+      background-color: rgba(54, 76, 98, 1)
+      margin: 0 auto
+
+    .second-bar-content
+      width: 80%
+      margin: 0 auto
+
+    .inner
+      padding: 15px 10px 5px 10px
+
+    .second-bar
+      ul li
+        float: left
+        margin-right: 40px
+      li
+        border: 2px solid #fff
+        border-radius: 3px
+        padding: 5px 20px
+        color: white
+
+    a .button .white .reverse i
+      color: #fff
+      border-color: #fff
+      border: 1px solid #fff
+
+    .second-bar .box-nav
+      height: 50px
+      width: 70%
+      background-color: rgba(220, 10, 50, 0.2)
+      margin: 0 auto
+
+    /*-----------------------
+     *       index
+     *-------------------------*/
+
+    .index
+      height: 800px
+      width: 100%
+      background-color: #f2f2f2
+      background-position: center
+      background-repeat: no-repeat
+      background-size: cover
+      margin-top: 50px
+
+    .index-box
+      border: 0px solid #fff
+      width: 80%
+      margin: 0 auto
+
+    .index h2
+      text-align: center
+      font-size: 16px
+      padding-top: 10px
+
+    /*------index-img------*/
+
+    .row
+      margin: 0 auto
+
+    .index
+      .index-content
+        position: relative
+        padding: 10px
+      .index-content-img
+        position: relative
+        background-color: #fff
+        border: 2px solid #dddddd
+        border-bottom: 5px solid #dddddd
+        border-radius: 3px
+        img
+          width: 100%
+          height: 100%
+          border-radius: 1px
+        a
+          display: block
+          position: relative
+
+    .index-content
+      padding: 0px
+      .index-content-states
+        position: absolute
+        z-index: 5
+        width: auto
+        background-color: rgba(255, 255, 255, 0.2)
+        top: 5px
+        left: 5px
+        border: 1px solid white
+        border-radius: 3px
+        padding: 2px 0px
+
+    .index .index-content-img .index-content-states　
+      font-size: 10px
+      text-align: center
+      color: white
+      border-radius: 3px
+
+    .index-content-states span
+      margin: 3px 5px
+      color: white
+
+    .index-content-date
+      position: absolute
+      bottom: 10px
+      left: 10px
+      i
+        font-size: 18px
+        color: white
+
+    .index .index-content p
+      font-size: 12px
+      color: block
+      text-align: left
+      text-decoration: none
+      padding: 20px 10px 30px
+      margin-bottom: 0px
+
+    .index-content-date span
+      font-size: 12px
+      margin-left: 2px
+      color: white
+
+    .index-content-summry
+      position: relative
+      .count
+        position: absolute
+        bottom: 5px
+        right: 20px
+        img
+          width: 20px
+          height: 20px
+
+    .btn-line
+      width: 100%
+      padding-top: 50px
+      .btn
+        margin: 0 auto
+        display: block
+        width: 20%
+
+    /*------------------
+     *
+     *-------------------*/
+
+    .img-back
+      background-image: url(img-logo/dena-logo.jpeg)
+      width: 200px
+      height: 200px
+
+    .button2
+      display: inline-block
+      width: 200px
+      height: 54px
+      text-align: center
+      text-decoration: none
+      line-height: 54px
+      outline: none
+      &::before, &::after
+        position: absolute
+        z-index: -1
+        display: block
+        content: ''
+
+    .button3
+      &::before, &::after
+        position: absolute
+        z-index: -1
+        display: block
+        content: ''
+
+    .button2
+      -webkit-box-sizing: border-box
+      -moz-box-sizing: border-box
+      box-sizing: border-box
+      -webkit-transition: all .3s
+      transition: all .3s
+      &::before, &::after
+        -webkit-box-sizing: border-box
+        -moz-box-sizing: border-box
+        box-sizing: border-box
+        -webkit-transition: all .3s
+        transition: all .3s
+
+    .button3
+      -webkit-box-sizing: border-box
+      -moz-box-sizing: border-box
+      box-sizing: border-box
+      -webkit-transition: all .3s
+      transition: all .3s
+      &::before, &::after
+        -webkit-box-sizing: border-box
+        -moz-box-sizing: border-box
+        box-sizing: border-box
+        -webkit-transition: all .3s
+        transition: all .3s
+
+    .button2
+      position: relative
+      z-index: 2
+      border: 2px solid #333
+      border-radius: 3px
+      color: #fff
+      line-height: 50px
+      -webkit-perspective: 300px
+      perspective: 300px
+      -webkit-transform-style: preserve-3d
+      transform-style: preserve-3d
+      &:hover
+        color: #333
+      &::after
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        background: black
+        -webkit-transform-origin: center bottom
+        transform-origin: center bottom
+        -webkit-transform: rotateX(0)
+        transform: rotateX(0)
+      &:hover::after
+        -webkit-transform: rotateX(-180deg)
+        transform: rotateX(-180deg)
+
+    .button3
+      background-color: #f0ad4e
+      color: #fff
+      &:hover
+        letter-spacing: 5px

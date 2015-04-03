@@ -20,10 +20,129 @@
         %td= event.date
         %td= event.place
         %td= event.user_id
-        %td= link_to 'Show', event
-        %td= link_to 'Edit', edit_event_path(event)
-        %td= link_to 'Destroy', event, :method => :delete, :data => { :confirm => 'Are you sure?' }
+        %td= link_to 'Show', user_event_path(event.user_id, event)
+        %td= link_to 'Edit', edit_user_event_path(event.user_id, event)
+        %td= link_to 'Destroy', user_event_path(event.user_id, event), :method => :delete, :data => { :confirm => 'Are you sure?' }
 
 %br
 
-= link_to 'New Event', new_event_path
+= link_to 'New Event', new_user_event_path(current_user)
+
+.top-head.table
+  .table-cell
+    .top-panel
+      .panel-content
+        %h1 より良い未来を作りましょう！
+        %br
+      .common
+        .raw
+          .col-xs-5
+          .col-xs-2
+            = link_to new_user_event_path(current_user), class: "button2 btn-default" do
+              座談会を作る
+          .col-xs-5
+/ ---------- second-bar ----------------
+.second-bar
+  .container
+    .second-bar-content
+      %ul.inner.clearfix
+        %a.white.reverse.button{:href => "#"}
+          %li
+            %i.fa.fa-arrow-circle-right
+            新着順
+        %a.white.reverse.button{:href => "#"}
+          %li
+            %i.fa.fa-arrow-circle-right
+            人気順
+        %a.white.reverse.button{:href => "#"}
+          %li
+            %i.fa.fa-arrow-circle-right
+            締め切りが近い順
+        %a.white.reverse.button{:href => "#"}
+          %li
+            %i.fa.fa-arrow-circle-right
+            カテゴリから探す
+/ ----------header-end----------
+/ ---------- 座談会一覧 ----------------
+.index
+  %h2 座談会一覧
+  .container
+    .index-boxies
+      .index-box
+        .row
+          - @events.each do |event|
+            .index-content.col-xs-4.sm-4.lg-6
+              .index-content-img
+                = link_to user_event_path(event.user_id, event) do
+                  %img.img-resoponsive{:alt => "", :src => "/assets/img1.jpg"}
+                    .index-content-states
+                      %span
+                        募集中
+                    .index-content-date
+                      %i.fa.fa-calendar.margin10-right.box-inline-middle
+                      %span.box-inline-middle
+                        2015.03.18 19:00-20:00
+                .index-content-summry
+                  %p 説明文が入る説明文が入る説明文が入る説明文る説明文が入る
+                  .count
+                    %img.box-inline-middle{:alt => "", :src => "/assets/userimage.png"}
+                      .box-inline-middle.number 14
+            
+  .btn-line
+    %button.btn.btn-warning.button3{"aria-controls" => "collapseExample", "aria-expanded" => "false", "data-target" => "#collapseExample", "data-toggle" => "collapse", :type => "button"}
+      もっと見る
+  #collapseExample.collapse
+    .well
+      .container
+        .index-boxies
+          .index-box
+            .row
+              - @events.each do |event|
+                .index-content.col-xs-4.sm-4.lg-6
+                  .index-content-img
+                    = link_to user_event_path(event.user_id, event) do
+                      %img.img-resoponsive{:alt => "", :src => "/assets/img1.jpg"}
+                        .index-content-states
+                          %span
+                            募集中
+                        .index-content-date
+                          %i.fa.fa-calendar.margin10-right.box-inline-middle
+                          %span.box-inline-middle
+                            2015.03.18 19:00-20:00
+                    .index-content-summry
+                      %p 説明文が入る説明文が入る説明文が入る説明文る説明文が入る
+                      .count
+                        %img.box-inline-middle{:alt => "", :src => "/assets/userimage.png"}
+                          .box-inline-middle.number 14
+                .index-content.col-xs-4.sm-4.lg-6
+                  .index-content-img
+                    = link_to user_event_path(event.user_id, event) do
+                      %img.img-resoponsive{:alt => "", :src => "/assets/img1.jpg"}
+                        .index-content-states
+                          %span
+                            募集中
+                        .index-content-date
+                          %i.fa.fa-calendar.margin10-right.box-inline-middle
+                          %span.box-inline-middle
+                            2015.03.18 19:00-20:00
+                    .index-content-summry
+                      %p 説明文が入る説明文が入る説明文が入る説明文る説明文が入る
+                      .count
+                        %img.box-inline-middle{:alt => "", :src => "/assets/userimage.png"}
+                          .box-inline-middle.number 14
+                .index-content.col-xs-4.sm-4.lg-6
+                  .index-content-img
+                    = link_to user_event_path(event.user_id, event) do
+                      %img.img-resoponsive{:alt => "", :src => "/assets/img1.jpg"}
+                        .index-content-states
+                          %span
+                            募集中
+                        .index-content-date
+                          %i.fa.fa-calendar.margin10-right.box-inline-middle
+                          %span.box-inline-middle
+                            2015.03.18 19:00-20:00
+                    .index-content-summry
+                      %p 説明文が入る説明文が入る説明文が入る説明文る説明文が入る
+                      .count
+                        %img.box-inline-middle{:alt => "", :src => "/assets/userimage.png"}
+                          .box-inline-middle.number 14
