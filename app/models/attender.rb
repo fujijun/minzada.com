@@ -1,3 +1,4 @@
 class Attender < ActiveRecord::Base
-  belongs_to
+  belongs_to :user
+  belongs_to :event
 end
