@@ -8,22 +8,57 @@
   .alert.alert-danger= message
 
 = form_for @user, url: registrations_path, method: :post do |f|
-  = f.label :name
-  = f.text_field :name
-  = f.label :university
-  = f.text_field :university
-  = f.label :major
-  = f.text_field :major
-  = f.label :career
-  = f.text_field :career
-  = f.label :email
-  = f.text_field :email
-  = f.label :password
-  = f.password_field :password
-  = f.label :password_confirmation
-  = f.password_field :password_confirmation
-  = f.submit
-- if logged_in?
-  = link_to "ログアウトする", sessions_path, method: :delete
-- else
-  = link_to "ログインする", new_sessions_path
+  #wrapper
+    %img
+      .register
+        .register-form
+          %h4 アカウントを登録して新しい出会いを！!
+          .field
+            = f.label :name
+            %br
+            = f.text_field :name, class: "form-control", placeholder: "名前"
+          .field
+            = f.label :university
+            %br
+            = f.text_field :university, class: "form-control", placeholder: "大学"
+          .field
+            = f.label :major
+            %br
+            = f.text_field :major, class: "form-control", placeholder: "学部"
+          .field
+            = f.label :career
+            %br
+            = f.text_area :career, class: "form-control", placeholder: "参加したインターン、留学経験、大学での実績などを記述して下さい。"
+          .field
+            = f.label :email
+            %br
+            = f.text_field :email, class: "form-control", placeholder: "メールアドレス"
+          .field
+            = f.label :password
+            %br
+            = f.text_field :password, class: "form-control", placeholder: "パスワードを入力してください"
+          .field
+            = f.label :password_confirmation
+            %br
+            = f.text_field :password_confirmation, class: "form-control", placeholder: "パスワードをもう一度入力してください"
+          .actions
+            = f.submit '登録しよう！', class: "btn btn-primary"
+        = f.label :name
+        = f.text_field :name
+        = f.label :university
+        = f.text_field :university
+        = f.label :major
+        = f.text_field :major
+        = f.label :career
+        = f.text_field :career
+        = f.label :email
+        = f.text_field :email
+        = f.label :password
+        = f.password_field :password
+        = f.label :password_confirmation
+        = f.password_field :password_confirmation
+        = f.submit
+      - if logged_in?
+        = link_to "ログアウトする", sessions_path, method: :delete
+      - else
+        = link_to "ログインする", new_sessions_path
