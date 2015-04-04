@@ -12,7 +12,9 @@ Rails.application.routes.draw do
     resources :attenders
   end
 
-  root to: 'registrations#new'
+  get 'registrations/teaser'
+
+  root to: 'registrations#teaser'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -1,4 +1,7 @@
 class RegistrationsController < ApplicationController
+  def teaser
+  end
+  
   def new
     @user = User.new
   end

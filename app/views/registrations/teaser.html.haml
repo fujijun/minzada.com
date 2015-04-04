@@ -1,0 +1,131 @@
+.teaser
+  %nav.navbar.navbar-inverse.navbar-fixed-top
+    .container-fluid
+      / Brand and toggle get grouped for better mobile display
+      .navbar-header
+        %button.navbar-toggle.collapsed{"data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", :type => "button"}
+          %span.sr-only Toggle navigation
+          %span.icon-bar
+          %span.icon-bar
+          %span.icon-bar
+        %a.navbar-brand{:href => "#"}
+          %img{:alt => "", :height => "20px", :src => "img/star-icon.png", :width => "20px"} Brand
+      / Collect the nav links, forms, and other content for toggling
+      #bs-example-navbar-collapse-1.collapse.navbar-collapse
+        %ul.nav.navbar-nav
+          %li.active{"font-color" => "black"}
+            %a{:href => "#"}
+              Home
+              %span.sr-only (current)
+        %ul.nav.navbar-nav.navbar-right
+          %li
+            = link_to new_sessions_path do
+              ログイン
+              %span.caret
+          %li
+            = link_to new_registrations_path do
+              新規登録
+              %span.caret
+      / /.navbar-collapse
+    / /.container-fluid
+  .top-head.table
+    .table-cell
+      .top-panel
+        .panel-content
+          %h1
+            %strong みんなの座談会
+          %br
+            %h2 〜企業との新しい出会いの場を〜
+        .admin.table
+          .table-cell
+            .row
+              .col-xs-6
+                %a.btn.btn-primary.margin-left-10per{:href => "#"} Facebookで新規登録 / ログイン
+              .col-xs-6              
+                = link_to new_registrations_path, class: "btn btn-warning margin-right-10per" do
+                  メールアドレスで新規登録
+              .col-xs-12
+                %p.admin-word.text-center みんなの座談会が許可なくSNSに投稿することはありません
+            .clear
+        .common
+          .raw
+            .col-xs-2
+            .col-xs-8
+              = link_to new_sessions_path, class: "btn btn-success" do
+                すでにユーザーの方はこちら
+            .col-xs-2
+  / ----------header-end----------
+  / ----------３つのポイントで説明するやつ----------
+  .content2
+    %h2 このサービスの3つの特徴
+    .container
+      .row
+        .col-xs-4
+          .lessons.thumbnail
+            .media
+              .media-left.media-middle
+                %img.img-circle{:alt => "", :src => "/assets/1426263378_406765.ico"}
+              .media-body.media-middle
+                %h3 無料で座談会の作成・参加ができます！
+            .point-text
+              無料で登録することが出来、
+              %br
+                学生側から企業に対して、
+                %br
+                  イベントの申請が出来ます。
+        .col-xs-4
+          .lessons.thumbnail
+            .media
+              .media-left.media-middle
+                %img.img-circle{:alt => "", :src => "/assets/handshake-icon.png"}
+              .media-body.media-middle
+                %h3 よりフランクな場を提供します！
+            .point-text
+              座談会形式でフランクに
+              %br
+                お互いのことをお話し頂けます。
+        .col-xs-4
+          .lessons.thumbnail
+            .media
+              .media-left.media-middle
+                %img.img-circle{:alt => "", :src => "/assets/love.png"}
+              .media-body.media-middle
+                %h3 特別オファーもあるかも！
+            .point-text
+              優秀だと判断された人には
+              %br
+                特別な選考ルートやその場での
+                %br
+                  内定も出る可能性があります。
+  .content3
+    %h2 現状の就活ではこんな問題があります
+  　　
+  .top-head.table
+    .table-cell
+      .top-panel
+        .panel-content
+          %h1 自分の未来を作ろう！！
+          %br
+            %h2 〜企業との出会いをより良いものにしよう！〜
+        .admin.table
+          .table-cell
+            .row
+              .col-xs-6
+                %a.btn.btn-primary.margin-left-10per{:href => "#"} Facebookで新規登録 / ログイン
+              .col-xs-6
+                = link_to new_registrations_path, class: "btn btn-warning margin-right-10per" do
+                  メールアドレスで新規登録
+              .col-xs-12
+                %p.admin-word.text-center カジュアルミーティングが許可なくSNSに投稿することはありません
+            .clear
+        .common
+          .raw
+            .col-xs-2
+            .col-xs-8
+              = link_to new_sessions_path, class: "btn btn-success" do
+                すでにユーザーの方はこちら
+            .col-xs-2
+  / ----------footer----------
+  .footer
+    .footer-text-end
+      %p.text-center Copyright © 2015 みんなの座談会, ALL Rights Reserved.
