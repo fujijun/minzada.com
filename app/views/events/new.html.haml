@@ -1,4 +1,32 @@
-%h1 New event
+%nav.navbar.navbar-inverse.navbar-fixed-top
+  .container-fluid
+    / Brand and toggle get grouped for better mobile display
+    .navbar-header
+      %button.navbar-toggle.collapsed{"data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", :type => "button"}
+        %span.sr-only Toggle navigation
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+      %a.navbar-brand{:href => "#"}
+        %img{:alt => "", :height => "20px", :src => "img/star-icon.png", :width => "20px"} Brand
+    / Collect the nav links, forms, and other content for toggling
+    #bs-example-navbar-collapse-1.collapse.navbar-collapse
+      %ul.nav.navbar-nav
+        %li.active{"font-color" => "black"}
+          %a{:href => "#"}
+            Home
+            %span.sr-only (current)
+      %ul.nav.navbar-nav.navbar-right
+        %li
+          = link_to new_sessions_path do
+            ログイン
+            %span.caret
+        %li
+          = link_to new_registrations_path do
+            新規登録
+            %span.caret
+    / /.navbar-collapse
+  / /.container-fluid
 
 = render 'form'
 
